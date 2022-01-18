@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import jsfundamentals from './js-fundamentals';
+
+jsfundamentals();
 
 function App() {
   return (
