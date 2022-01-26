@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import CartWidget from '../Icon-Comp/CartWidget';
 const NavBar = () => {
   return (<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
@@ -24,6 +25,7 @@ const NavBar = () => {
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>
+  <CartWidget />
   </Container>
 </Navbar>);
   

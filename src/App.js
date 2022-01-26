@@ -1,16 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import jsfundamentals from './js-fundamentals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from  "./Components/NavBar";
-
+import NavBar from  "./Components/NavBar-Comp/NavBar";
+import ItemlistContainer from './Components/Items_Comp/ItemlistContainer';
 //jsfundamentals();
-
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <header className="App-header"></header>
+      <div className="App-header">
+      <br/>
+      <ItemlistContainer/>
+      </div>
     </div>
   );
 }
