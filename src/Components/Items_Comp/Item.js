@@ -1,20 +1,21 @@
 import React from 'react';
-import { Card,Button} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import Bender from '../Icon-Comp/Bender.png'
+import ItemCount from './ItemCount';
 
-const Item = ({bg,Producto}) => {
+const Item = ({bg,Producto,Stock,Initial}) => {
     return <div>
-       <Card style={{ width: '12rem' }} bg={bg}>
+       <Card style={{ width: '16rem' }} bg={bg}>
   <Card.Img variant="top" src={Bender} height={400}  />
   <Card.Body>
     <Card.Title>Producto: {Producto}</Card.Title>
     <Card.Text>
     Descripción:....
     </Card.Text>
-    <Button variant="primary">Comprar</Button>
+    <ItemCount Stock={Stock} Initial={Initial}/>
   </Card.Body>
-</Card>
-<br/>
+  </Card>
+  <br/>
     </div>;
       
       

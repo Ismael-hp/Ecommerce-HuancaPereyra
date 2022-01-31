@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import ItemCount from './ItemCount';
 
 const Itemsbackground = [
     {id:"1",bg:'dark',Producto:"Celular"},
@@ -12,7 +13,7 @@ const ItemlistContainer = () => {
   return <div>
       {
           Itemsbackground.map(({id,bg,Producto})=>(
-              <Item key={id} bg={bg} Producto={Producto}/>
+                  <Item key={id} bg={bg} Producto={Producto} Stock={13} Initial={1}/>
           ))
       }
   </div>;
