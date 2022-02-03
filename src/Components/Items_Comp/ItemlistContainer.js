@@ -1,21 +1,35 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Item from './Item';
-import ItemCount from './ItemCount';
+import { productsAPI } from '../Helpers/Promises';
+import ItemList from './ItemList';
 
-const Itemsbackground = [
-    {id:"1",bg:'dark',Producto:"Celular"},
-    {id:"2",bg:'warning',Producto:"Notebook"},
-    {id:"3",bg:'success',Producto:"Tablet"},
-    {id:"4",bg:'secondary',Producto:"SmartTV"}, 
-]
 
 const ItemlistContainer = () => {
-  return <div>
-      {
-          Itemsbackground.map(({id,bg,Producto})=>(
-                  <Item key={id} bg={bg} Producto={Producto} Stock={13} Initial={1}/>
-          ))
+
+    const [Products, setproducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+        getProducts();
+      }, []);
+      
+    const getProducts = async () => {
+        try {
+          const result = await productsAPI;
+          setproducts(result);
+        } catch (error) {
+          console.log({ error });
+        } finally {
+          setLoading(false);
+          console.log("Se termina de consumir a la API");
+        }
+      };
+      if (loading) {
+        return <h1>loadingDATA.....</h1>;
       }
+
+  return <div>
+      <ItemList Products={Products}/>
   </div>;
 };
 

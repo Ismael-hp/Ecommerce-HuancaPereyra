@@ -4,8 +4,6 @@ import { Button,ButtonGroup,Badge} from 'react-bootstrap';
 const ItemCount = ({Stock,Initial}) => {
 
     const [Counter, setCounter] = useState(Initial);
-
-
     const subtractCounter = () => {
      if (Counter <= 0) return;
     setCounter(Counter - 1);
