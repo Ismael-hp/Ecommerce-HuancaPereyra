@@ -16,7 +16,7 @@ const ItemlistContainer = () => {
   }, []);
 
   const getProducts = async () => {
-    try { 
+    try {
       const result = await productsAPI;
       setproducts(result);
     } catch (error) {
@@ -30,8 +30,9 @@ const ItemlistContainer = () => {
     return <h1>loadingDATA.....</h1>;
   }
   return <div className='FlexStyle'>
-    <ItemList Products={Products} setselectItem={setselectItem}/>
-    <ItemDetailContainer {...selectItem}/>
+    <ItemList Products={Products} setselectItem={setselectItem} />
+    <ItemDetailContainer idItem={selectItem}  />
+  
   </div>;
 };
 export default ItemlistContainer;

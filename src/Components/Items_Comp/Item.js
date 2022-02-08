@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import Bender from '../Icon-Comp/Bender.png';
 
-const Item = ({ id, bg, Producto, Stock, Initial, Description, setselectItem, Precio }) => {
+const Item = ({ id, bg, Producto,setselectItem}) => {
 
-    const selectItem = () => setselectItem({ id, bg, Producto, Stock, Initial, Description, Precio });
+    const selectItem = () => setselectItem(id);
   return <div>
     <Card style={{ width: '16rem' }} bg={bg}>
       <Card.Img variant="top" src={Bender} height={400} />
