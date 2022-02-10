@@ -8,7 +8,6 @@ const ItemList = ({ Products, setselectItem }) => {
         <Item key={product.id} {...product} Initial={1} setselectItem={setselectItem} />
       ))
     }
-
   </div>;
 };
 

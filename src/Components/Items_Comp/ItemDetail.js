@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card} from 'react-bootstrap';
-import Bender from '../Icon-Comp/Bender.png';
 import ItemCount from './ItemCount';
 
 

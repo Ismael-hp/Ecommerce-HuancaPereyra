@@ -13,14 +13,11 @@ const ItemCount = ({Stock,Initial}) => {
             if (Counter >= Stock) return;
             setCounter(Counter + 1);
         };
-
-
-
   return <div>
   <ButtonGroup aria-label="Basic example">
-  <Button onClick={subtractCounter} variant="primary">-</Button>
-  <Button variant="primary">Agregar al carrito!<Badge bg="secondary">{Counter}</Badge><span className="visually-hidden">unadada</span></Button>
-  <Button onClick={addCounter} variant="primary">+</Button>
+  <Button onClick={subtractCounter} variant="info">-</Button>
+  <Button variant="info">Agregar al carrito!<Badge bg="dark">{Counter}</Badge><span className="visually-hidden">unadada</span></Button>
+  <Button onClick={addCounter} variant="info">+</Button>
   </ButtonGroup>
   </div>;
 };

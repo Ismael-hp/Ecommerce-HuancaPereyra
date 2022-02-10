@@ -12,7 +12,7 @@ const Routess = () => {
         <Routes>
           <Route path="/" element={<ItemlistContainer />} />
           <Route path="/category/:id" element={<ItemlistContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer/>} />
         </Routes>
       </div>
     </BrowserRouter>
