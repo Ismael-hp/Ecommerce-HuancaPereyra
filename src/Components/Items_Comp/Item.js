@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button} from 'react-bootstrap';
 import Bender from '../Icon-Comp/Bender.png';
+import {Link,NavLink } from 'react-router-dom';
 
-const Item = ({ id, bg, Producto,setselectItem}) => {
+const Item = ({ id,bg,Producto,Imagen,setselectItem}) => {
 
     const selectItem = () => setselectItem(id);
   return <div>
     <Card style={{ width: '16rem' }} bg={bg}>
-      <Card.Img variant="top" src={Bender} height={400} />
+      <Card.Img variant="top" src={Imagen} height={250} />
       <Card.Body>
         <Card.Title>{Producto}</Card.Title>
-        <Button variant="primary" onClick={selectItem} >Seleccionar Producto</Button>
+        <Button variant="primary" onClick={selectItem} ><NavLink to="category/FIXIE">TEST</NavLink></Button>
       </Card.Body>
     </Card>
     <hr />

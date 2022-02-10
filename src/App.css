@@ -24,10 +24,15 @@
   color: white;
 }
 .FlexStyle{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
 }
+
+.DetailC{
+  display: none;
+}
+
 
 .App-link {
   color: #61dafb;
