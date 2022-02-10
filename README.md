@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+DETALLES: Proyecto Ecommerce-HuancaPereyra
+
+*Se realiza un proyecto Ecommerce para venta de Bicicletas, un tema que es de mi interes personal.
+No se definio el nombre del ecommerce por el momento.
+
+Todas las decisiones que voy a tomar en adelante va relacionado a un diseño simple ya que me brinda comodidad  
+El navBar tiene configurado routes para listar las categorias de bicicletas y brand para la pagina de inicio
+En la primera pantalla se encuentras con la lista de todos los productos y cada producto tiene un boton que te lleva al detalle del mismo
+
+Se usa las Dependecias vistas en Clase
+Boostratp ->>Libreria de componentes para estilos 
+
