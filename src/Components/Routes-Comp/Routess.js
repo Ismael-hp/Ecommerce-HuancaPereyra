@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ItemDetail from '../Items_Comp/ItemDetail';
 import ItemDetailContainer from '../Items_Comp/ItemDetailContainer';
 import ItemlistContainer from '../Items_Comp/ItemlistContainer';
 import NavBar from '../NavBar-Comp/NavBar';
@@ -13,6 +14,7 @@ const Routess = () => {
           <Route path="/" element={<ItemlistContainer />} />
           <Route path="/category/:id" element={<ItemlistContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer/>} />
+          <Route path="/item/:id/carrito" element={<h1>Lista de productos en el Carrito</h1>} />
         </Routes>
       </div>
     </BrowserRouter>

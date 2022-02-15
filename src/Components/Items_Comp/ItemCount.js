@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Button,ButtonGroup,Badge} from 'react-bootstrap';
 
-const ItemCount = ({Stock,Initial}) => {
+const ItemCount = ({Stock,Initial,onAdd}) => {
 
     const [Counter, setCounter] = useState(Initial);
     const subtractCounter = () => {
@@ -16,7 +16,7 @@ const ItemCount = ({Stock,Initial}) => {
   return <div>
   <ButtonGroup aria-label="Basic example">
   <Button onClick={subtractCounter} variant="info">-</Button>
-  <Button variant="info">Agregar al carrito!<Badge bg="dark">{Counter}</Badge><span className="visually-hidden">unadada</span></Button>
+  <Button onClick={onAdd} variant="info">Agregar al carrito!<Badge bg="dark">{Counter}</Badge><span className="visually-hidden">unadada</span></Button>
   <Button onClick={addCounter} variant="info">+</Button>
   </ButtonGroup>
   </div>;
