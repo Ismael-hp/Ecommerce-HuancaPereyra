@@ -40,7 +40,9 @@ const NavBar = () => {
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      <NavLink to="cartList">
       <CartWidget />
+      </NavLink>
     </Container>
   </Navbar>);
 

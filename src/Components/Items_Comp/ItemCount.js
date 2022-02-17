@@ -1,17 +1,19 @@
 import React,{useState} from 'react';
 import { Button,ButtonGroup,Badge} from 'react-bootstrap';
 
-const ItemCount = ({Stock,Initial,onAdd}) => {
+const ItemCount = ({Stock,Initial,onAdd,setQuantity},) => {
 
     const [Counter, setCounter] = useState(Initial);
     const subtractCounter = () => {
      if (Counter <= 0) return;
     setCounter(Counter - 1);
+    setQuantity(Counter-1);
     };
 
         const addCounter = () => {
             if (Counter >= Stock) return;
             setCounter(Counter + 1);
+            setQuantity(Counter+1);
         };
   return <div>
   <ButtonGroup aria-label="Basic example">
