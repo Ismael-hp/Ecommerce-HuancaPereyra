@@ -34,9 +34,6 @@ const NavBar = () => {
         <Nav>
           <Nav.Link href="#deets">More deets</Nav.Link>
           <Nav.Link eventKey={2} href="#memes">
-            <NavLink to="carrito/lista">
-            Carrito
-            </NavLink>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

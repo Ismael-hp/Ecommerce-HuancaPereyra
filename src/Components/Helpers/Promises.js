@@ -11,6 +11,6 @@ export const productsAPI = new Promise((resolve, reject) => {
       const findProduct = products.find(product => product.id === idItem);
       setTimeout(() => {
         resolve(findProduct);
-      }, 2000)
+      }, 50)
     })
   };
