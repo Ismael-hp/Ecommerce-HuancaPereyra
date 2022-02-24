@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { getItem} from '../Helpers/Promises';
 import { Spinner} from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import {getFirestore,doc,getDoc} from "firebase/firestore";
+
 
 
 
@@ -17,17 +19,30 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
         setLoading(true)
-        getItem(id).then(result => {
-            setDataItem(result);
-            setLoading(false);
-        })
+        const db = getFirestore();
+        console.log(id)
+        const Items= doc(db,"items",id);
+        getDoc(Items).then((item)=>{
+        setDataItem({
+        id: item.id,
+        ...item.data()
+      });
+        });
+        setLoading(false)
+        // getItem(id).then(result => {
+        //     setDataItem(result);
+        //     setLoading(false);
+        // })
     }, [id]);
+
+    console.log(dataItem)
 
     if (loading) {
         return <Spinner animation="border" variant="light"/>;
       }
 
       return <div>
+        <br/>
         {dataItem ? <ItemDetail {...dataItem} /> :<div><h1>Lista Vacia</h1></div>}
       </div>
 };

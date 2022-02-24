@@ -19,7 +19,7 @@ const NavBar = () => {
           <NavDropdown title="Categorias" id="collasible-nav-dropdown" >
             <NavDropdown.Item ><NavLink to="category/MOUNTAIN BIKE">MOUNTAIN BIKE  </NavLink></NavDropdown.Item>
             <NavDropdown.Item ><NavLink to="category/FIXEI">FIXIE</NavLink></NavDropdown.Item>
-            <NavDropdown.Item ><NavLink to="category/Gravel">GRAVEL</NavLink></NavDropdown.Item>
+            <NavDropdown.Item ><NavLink to="category/GRAVEL">GRAVEL</NavLink></NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item>
               <NavLink

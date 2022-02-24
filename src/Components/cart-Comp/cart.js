@@ -25,18 +25,20 @@ const Cart = () => {
   return (
     <div className='FlexStyle'>
       {PrecioTotal ? items.map(({ item }) => (
-        <Card style={{ width: '16rem' }} bg={item.bg}>
-          <Card.Img variant="top" src={item.Imagen} height={400} />
+        <div>
+          <br/>
+        <Card style={{ width: '16rem' }} bg="dark" border="info">
+          <Card.Img variant="top" src={item.Imagen} height={250} />
           <Card.Body>
-            <Card.Title>{item.Producto}</Card.Title>
+            <Card.Title>{item.ProductnName}</Card.Title>
             <Card.Title >${item.Precio}</Card.Title>
             <Card.Text>
               {item.Description}
             </Card.Text>
-            <Button variant="info">Finalizar compra!</Button>
             <Button onClick={removeItem} variant="danger">Remover</Button>
           </Card.Body>
         </Card>
+        </div>
       )) : <div><h1>Carrito Vacio</h1></div>
       }
 
