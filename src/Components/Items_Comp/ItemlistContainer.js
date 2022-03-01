@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useContext} from 'react';
 import { productsAPI } from '../Helpers/Promises';
 import ItemList from './ItemList';
 import { useParams} from 'react-router-dom';
 import {getFirestore,collection,getDocs} from "firebase/firestore";
+import { CartContext } from '../../context/CartContext';
 
 
 const ItemlistContainer = () => {
   const [Products, setproducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectItem, setselectItem] = useState(null);
+  const {items} = useContext(CartContext)
+
+  console.log(items)
 
   const {id} =useParams();
 
@@ -24,6 +28,7 @@ const ItemlistContainer = () => {
     setLoading(false);
   }, []);
   console.log(Products);
+
 
 
   // const getProducts = async () => {

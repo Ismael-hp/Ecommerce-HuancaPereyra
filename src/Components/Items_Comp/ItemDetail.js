@@ -9,6 +9,7 @@ const ItemDetail = ({Producto,Description,Precio,Stock,Imagen,id}) => {
  const [addCarrito, setaddCarrito] = React.useState(null)
  const { addItem } = React.useContext(CartContext);
  const [quantity, setQuantity] = React.useState(1);
+ 
     const onAdd =()=>{
         addItem({
             item:{Producto,Description,Precio,Stock,Imagen,id},
