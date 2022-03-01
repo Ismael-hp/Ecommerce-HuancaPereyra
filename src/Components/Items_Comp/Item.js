@@ -10,7 +10,7 @@ const Item = ({ id,ProductName,Imagen,setselectItem}) => {
       <Card.Img variant="top" src={Imagen} height={250} />
       <Card.Body>
         <Card.Title>{ProductName}</Card.Title>
-        <Button variant="info" onClick={selectItem} ><NavLink to={`item/${id}`} >Agregar Al Carrito!!</NavLink></Button>
+        <Button variant="info" onClick={selectItem} ><NavLink to={`item/${id}`} >Detalles</NavLink></Button>
       </Card.Body>
     </Card>
     <hr />

@@ -29,21 +29,16 @@ const ItemDetailContainer = () => {
       });
         });
         setLoading(false)
-        // getItem(id).then(result => {
-        //     setDataItem(result);
-        //     setLoading(false);
-        // })
     }, [id]);
 
     console.log(dataItem)
 
-    if (loading) {
-        return <Spinner animation="border" variant="light"/>;
-      }
-
       return <div>
         <br/>
-        {dataItem ? <ItemDetail {...dataItem} /> :<div><h1>Lista Vacia</h1></div>}
+        {loading ? <Spinner animation="border" variant="light" /> : <div>
+      <br /><ItemDetail {...dataItem} />
+    </div>
+    }
       </div>
 };
 export default ItemDetailContainer;
