@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Button, Card } from 'react-bootstrap';
+import {Link,NavLink } from 'react-router-dom';
 const Cart = () => {
   const [PrecioTotal, setPrecioTotal] = useState([])
   const { items } = useContext(CartContext);
@@ -38,8 +39,9 @@ const Cart = () => {
             <Button onClick={removeItem} variant="danger">Remover</Button>
           </Card.Body>
         </Card>
+        <Button variant="info" ><NavLink to="../checkout" >Agregar Al Carrito!!</NavLink></Button>
         </div>
-      )) : <div><h1>Carrito Vacio</h1></div>
+      )) : <div>Lista vaciasa</div>
       }
 
     </div>
