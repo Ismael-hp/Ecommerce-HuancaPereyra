@@ -9,7 +9,7 @@ const NavBar = () => {
     <Container>
 
       <Navbar.Brand>
-        <NavLink to="/">Ecommerce-HuancaPereyra</NavLink>
+        <NavLink to="/">IHP-BiKeS</NavLink>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

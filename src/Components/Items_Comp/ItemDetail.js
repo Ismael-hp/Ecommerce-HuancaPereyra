@@ -4,15 +4,16 @@ import ItemCount from './ItemCount';
 import { CartContext } from '../../context/CartContext';
 
 
-const ItemDetail = ({Producto,Description,Precio,Stock,Imagen,id}) => {
+const ItemDetail = ({ProductName,Description,Precio,Stock,Imagen,id}) => {
 
  const [addCarrito, setaddCarrito] = React.useState(null)
  const { addItem } = React.useContext(CartContext);
  const [quantity, setQuantity] = React.useState(1);
- 
+
+
     const onAdd =()=>{
         addItem({
-            item:{Producto,Description,Precio,Stock,Imagen,id},
+            item:{ProductName,Description,Precio,Stock,Imagen,id},
             quantity,
         })
         console.log({quantity})
@@ -21,9 +22,9 @@ const ItemDetail = ({Producto,Description,Precio,Stock,Imagen,id}) => {
     return(
     <div className='FlexStyle'>
         <Card style={{ width: '16rem' }} bg="dark" border="info">
-            <Card.Img variant="top" src={Imagen} height={250}/>
+            <Card.Img variant="top"  style={{background:"#394960"}} src={Imagen} height={250}/>
             <Card.Body>
-                <Card.Title>{Producto}</Card.Title>
+                <Card.Title>{ProductName}</Card.Title>
                 <Card.Title >${Precio}</Card.Title>
                 <Card.Text>
                     {Description}

@@ -1,85 +1,36 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect} from "react";
 import { CartContext } from "../../context/CartContext";
 import { Button, Card } from 'react-bootstrap';
-import {Link,NavLink } from 'react-router-dom';
-import ItemCount from "../Items_Comp/ItemCount";
-import itemcar from "./itemcar";
+import {NavLink } from 'react-router-dom';
+import ItemCart from "./ItemCart";
+
+
 
 const Cart = () => {
-  const [PrecioTotal, setPrecioTotal] = useState(null)
-  const { items,removeritem} = useContext(CartContext);
+  const { items,settotalPrice,totalPrice} = useContext(CartContext);
   useEffect(() => {
-    getItemParcial();
+    GetPrecioTotal();
+  }, [items])
 
-  }, [])
-  const getItemParcial = () => {
-    items.map(({ item,quantity }) => {
-      setPrecioTotal(
-        quantity*item.Precio
-      )
-      console.log(PrecioTotal)
+  const GetPrecioTotal = () => {
+    let total = 0;
+    items.map(({ item, quantity }) => {
+      total = total + (item.Precio * quantity)
     });
+    settotalPrice(total)
+    console.log(totalPrice)
   }
 
-  const remItem=()=>{
-    removeritem("EiMPwLq3khye9U2uk73x")
-  };
-
   return (
-    <div className='FlexStyle'>
- { items.map(({ item, quantity }) => (
-      <div>
-        <br />
-        <Card style={{ width: '16rem' }} bg="dark" border="info">
-// // //     <Card.Img variant="top" src={item.Imagen} height={250} />
-// // //     <Card.Body>
-// // //       <Card.Title>{item.ProductnName}</Card.Title>
-// // //       <Card.Title >Seleccionado: {quantity}    ${item.Precio} Por unidad</Card.Title>
-// // //       <Card.Title >Subtotal ${PrecioTotal} ++ item id: {item.id}</Card.Title>
-// // //       {/* <Card.Text>
-// // //         {item.Description}
-// // //       </Card.Text> */}
-// // //       {/* <ItemCount Stock={item.Stock} Initial={quantity}/> */}
-// // //       <Button onClick={remItem(item.id)} variant="danger">Removerrr</Button>
-// // //     </Card.Body>
-
-        </Card>
-
+    <div className="Carrito">
+      <div className='FlexStyle'>
+        {items[0] ? items.map(({ item, quantity }) => (<ItemCart getTotal={GetPrecioTotal} key={item.id} {...item} quantity={quantity} />)) : <h1>Lista Vacia Carrito</h1>}
       </div>
-    ))
-      }
+      <div><h1>Monto total: {totalPrice}</h1>
+       <NavLink to="../checkout" ><Button>Finalizar Compra!</Button></NavLink> 
+      </div>
     </div>
 
   );
 };
-
-            {/* <Card.Text>
-              {item.Description}
-            </Card.Text> */}
-            {/* <ItemCount Stock={item.Stock} Initial={quantity}/> */}
-
-
-// {PrecioTotal ? items.map(({ item,quantity }) => (
-//   <div>
-//     <br/>
-//   <Card style={{ width: '16rem' }} bg="dark" border="info">
-//     <Card.Img variant="top" src={item.Imagen} height={250} />
-//     <Card.Body>
-//       <Card.Title>{item.ProductnName}</Card.Title>
-//       <Card.Title >Seleccionado: {quantity}    ${item.Precio} Por unidad</Card.Title>
-//       <Card.Title >Subtotal ${PrecioTotal} ++ item id: {item.id}</Card.Title>
-//       {/* <Card.Text>
-//         {item.Description}
-//       </Card.Text> */}
-//       {/* <ItemCount Stock={item.Stock} Initial={quantity}/> */}
-//       <Button onClick={remItem(item.id)} variant="danger">Removerrr</Button>
-//     </Card.Body>
-    
-//   </Card>
-  
-//   </div>
-// )) : <div>Lista vaciasa</div>
-// }
-
-
 export default Cart;

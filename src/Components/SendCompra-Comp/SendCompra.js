@@ -1,19 +1,19 @@
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useContext, useState } from "react";
+import { CartContext } from '../../context/CartContext';
 
-const SendCompra = () => {
-    const [Comprador, setComprador] = useState({
-        name:"Test",
-        email:"Test2",
-        phone:"Test3"
-    });
+const SendCompra = (FormData) => {
+  const {items,totalPrice} = useContext(CartContext)
     const [ordenId, setordenId] = useState(null)
     const SendOrder =()=>{
+      console.log(FormData)
+    console.log(items)
+    console.log(totalPrice)
         const order={
-            Comprador,
-            item:[{ProductName:"MB-rodado39",Precio:54545,Description:"Detalle del producto MB"}],
-            totalCompra:12983
+            FormData,
+            items,
+            totalPrice
         };
         const db = getFirestore();
         const OrdenCompra= collection(db,"orders");
@@ -21,9 +21,6 @@ const SendCompra = () => {
         addDoc(OrdenCompra,order).then(({id}) =>setordenId(id))
         console.log(ordenId);
     };
-
-
-
 
   return (
     <div><Button onClick={SendOrder}>Realizar Compra!</Button></div>

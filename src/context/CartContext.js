@@ -3,9 +3,8 @@ import React, { createContext,useState } from 'react'
 export const CartContext=createContext();
 
 export  const CartProvider = ({children}) => {
-    const [items, setitems] = useState([]);
-    console.log({items})
-
+    const [items, setitems] = useState([]); 
+    const [totalPrice, settotalPrice] = useState(null)
 
     const addItem=(itemExtra)=>{
         
@@ -15,17 +14,23 @@ export  const CartProvider = ({children}) => {
         console.log(items)
     }
     
-    const removeritem=(itemId)=>{
-        console.log("Remover Item:")
-        console.log(itemId)
-        console.log(items)
+    const removerItem=(itemId)=>{
         setitems(items.filter(({item})=>item.id!==itemId))
         console.log(items)
     };
 
+    const changeCart=(id,cantidad)=>{
+        if(cantidad===0)
+        removerItem(id)
+        items.find(({item})=>
+            item.id===id
+        ).quantity=cantidad;
+        console.log(items)
+    }
+
 
   return (
-      <CartContext.Provider value={{items,addItem,removeritem}} >
+      <CartContext.Provider value={{items,addItem,removerItem,changeCart,settotalPrice,totalPrice}} >
           {children}
       </CartContext.Provider>
   )

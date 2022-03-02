@@ -29,6 +29,11 @@
   justify-content:space-around;
 }
 
+.formulario{
+  width:50%;
+  margin: auto;
+}
+
 .DetailC{
   display: none;
 }
