@@ -26,7 +26,6 @@ const SendCompra = (FormData) => {
       {ordenId ? <div><p>Se completo la compra. Muchas gracias!<br/>ticket de Compra:{ordenId}</p>
        <NavLink to="/"><Button onClick={cleanCarrito}>SeguirComprando</Button></NavLink></div>   
        :<Button onClick={SendOrder}>Realizar Compra!</Button>}
-      
     </div>
   )
 }

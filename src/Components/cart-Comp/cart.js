@@ -1,8 +1,10 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext, useEffect,useState} from "react";
 import { CartContext } from "../../context/CartContext";
 import { Button, Card } from 'react-bootstrap';
 import {NavLink } from 'react-router-dom';
 import ItemCart from "./ItemCart";
+import CheckCompra from "../Check-Compra/CheckCompra";
+
 
 
 
@@ -32,7 +34,7 @@ const Cart = () => {
       </div>:<div>
         <h1>Monto total: {totalPrice}</h1>
        <NavLink to="../" ><Button>GoProductos!</Button></NavLink> 
-      </div>
+        </div>
       }
       
     </div>
