@@ -19,26 +19,32 @@ const FormmC = () => {
   }
 
   return (
-    <div className='formulario'> <Form >
-      <Form.Group className="mb-3" controlId="NombreyApellido">
-
-    <Form.Control onChange={irCompletando} name="nombreCompleto" type="text" placeholder="Nombre y apellido" />
-  </Form.Group>
-    <Form.Group className="mb-3" controlId="Direccion">
-
-      <Form.Control onChange={irCompletando} name="direccion" type="text" placeholder="Direccion" />
+    <div className='vistaCheckout'>
+      <div><h1>Completar datos para finalizar compra! </h1></div>
+      <div className='formulario'> 
+      
+      <Form >
+        <Form.Group className="mb-3" controlId="NombreyApellido">
+  
+      <Form.Control onChange={irCompletando} name="nombreCompleto" type="text" placeholder="Nombre y apellido" />
     </Form.Group>
-    <Form.Group className="mb-3" controlId="formGroupEmail">
+      <Form.Group className="mb-3" controlId="Direccion">
+  
+        <Form.Control onChange={irCompletando} name="direccion" type="text" placeholder="Direccion" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGroupEmail">
+  
+        <Form.Control onChange={irCompletando} name="email" type="email" placeholder="Email" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGroupPassword">
+  
+        <Form.Control onChange={irCompletando} name="tel" type="text" placeholder="Telefono" />
+      </Form.Group>
+    </Form>
+    </div>
+    <SendCompra FormData={FormData}/>
+    </div>
 
-      <Form.Control onChange={irCompletando} name="email" type="email" placeholder="Email" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formGroupPassword">
-
-      <Form.Control onChange={irCompletando} name="tel" type="text" placeholder="Telefono" />
-    </Form.Group>
-  </Form>
-  <SendCompra FormData={FormData}/>
-  </div>
   )
 }
 

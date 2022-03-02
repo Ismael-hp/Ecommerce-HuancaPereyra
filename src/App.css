@@ -28,10 +28,17 @@
   flex-flow: row wrap;
   justify-content:space-around;
 }
+.vistaCheckout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
 .formulario{
   width:50%;
-  margin: auto;
+  margin:0%;
 }
 
 .DetailC{

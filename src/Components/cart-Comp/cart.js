@@ -26,9 +26,15 @@ const Cart = () => {
       <div className='FlexStyle'>
         {items[0] ? items.map(({ item, quantity }) => (<ItemCart getTotal={GetPrecioTotal} key={item.id} {...item} quantity={quantity} />)) : <h1>Lista Vacia Carrito</h1>}
       </div>
-      <div><h1>Monto total: {totalPrice}</h1>
+      {items[0]?<div>
+        <h1>Monto total: {totalPrice}</h1>
        <NavLink to="../checkout" ><Button>Finalizar Compra!</Button></NavLink> 
+      </div>:<div>
+        <h1>Monto total: {totalPrice}</h1>
+       <NavLink to="../" ><Button>GoProductos!</Button></NavLink> 
       </div>
+      }
+      
     </div>
 
   );
