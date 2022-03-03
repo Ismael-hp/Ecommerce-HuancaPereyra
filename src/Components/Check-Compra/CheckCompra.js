@@ -5,42 +5,50 @@ import Swal from 'sweetalert2';
 
 const CheckCompra = ({dataSearch }) => {
   const [DetalleCompra, setDetalleCompra] = useState(null)
+  
   useEffect(() => {
-Alertas()
+    if(DetalleCompra!==null){ 
+      Alertas()
+      setDetalleCompra(null)
+    }
   }, [DetalleCompra])
+  
 
-  const Getdata = () => {
-    const db = getFirestore();
-    const dataDoc = doc(db, "orders", dataSearch.search)
-    getDoc(dataDoc).then((vista) => {
-      setDetalleCompra(vista.data())
-      console.log(vista.data())
-      console.log(DetalleCompra);
-    })
-    console.log(DetalleCompra)
-  }
+    const Getdata = () => {
+    //   return new Promise((resolve, reject) => {
+    //   const findProduct = products.find(product => product.id === idItem);
+    //   setTimeout(() => {
+    //     resolve(findProduct);
+    //   }, 50)
+    // })
+        const db = getFirestore();
+        const dataDoc = doc(db, "orders", dataSearch.search)
+        getDoc(dataDoc).then((data)=>{
+          setDetalleCompra(data.data())
+        })
+      }
 
-  const Alertas=()=>{
-    if (DetalleCompra) {
-      Swal.fire(
-        dataSearch.search
-      )
+    const Alertas=()=>{
+      console.log(dataSearch.search)
+      console.log(DetalleCompra)
+      if (DetalleCompra!==null) {
+        Swal.fire(
+          dataSearch.search,
+          DetalleCompra.FormData.email
+        )
+      }
+      if(DetalleCompra===undefined){
+        Swal.fire(
+          "No se encontro data con el valor ingresado!",
+          "Intente nuevamente"
+        )
+  
+      }
     }
-    else{
-      Swal.fire(
-        "Vacio"
-      )
-
-    }
-  }
-
-
-
 
   return (
-    <div>
       <Button onClick={Getdata} variant="outline-success">SearchCompra</Button>
-    </div>
+
   )
 }
 
