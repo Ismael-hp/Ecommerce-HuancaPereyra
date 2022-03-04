@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+DETALLES: Proyecto Ecommerce-HuancaPereyra
+
+*Se realiza un proyecto Ecommerce para venta de Bicicletas, un tema que es de mi interes personal.
+
+Todas las decisiones que voy a tomar en adelante va relacionado a un diseño simple ya que me brinda comodidad
+El navBar tiene configurado routes para listar las categorias de bicicletas, brand para la pagina de inicio y una buscador para consultar Id de compras realizadas .En la primera pantalla se encuentras con la lista de todos los productos y cada producto tiene un boton que te lleva al detalle del mismo.
+Se procede seleccionando la cantidad con la posibilidad de agregarlo al carrito, el mismo tendra una lista de todos los items seleccionados indicando la cantidad de c/u.
+Se procede finalizando la compra y al ultimo paso de ingresar los datos del comprador para realizar la compra. Este paso te devuelve el ID de la compra realizada y la opcion de volver a comprar nuevamente vaciando el carrito
+Para el buscador de compras que se encuentra en el navbar se debe ingresar el id de una compra realizada anteriormente.
+
+
+Se usa las Dependecias vistas en Clase Boostratp ->>Libreria de componentes para estilos + SweetAlert2 para manejar alertas lindas :)
+
+
