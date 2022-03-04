@@ -10,11 +10,7 @@ const Item = ({ id,ProductName,Imagen,setselectItem}) => {
       <Card.Img variant="top" style={{background:"#394960"}} src={Imagen} height={250} />
       <Card.Body>
         <Card.Title>{ProductName}</Card.Title>
-<<<<<<< HEAD
-        <Button variant="info" onClick={selectItem} ><NavLink to={`item/${id}`} >Detalles</NavLink></Button>
-=======
         <Button variant="info" onClick={selectItem} ><NavLink to={`item/${id}`} >Detalles!!</NavLink></Button>
->>>>>>> Entrega-Proyecto-Final
       </Card.Body>
     </Card>
     <hr />

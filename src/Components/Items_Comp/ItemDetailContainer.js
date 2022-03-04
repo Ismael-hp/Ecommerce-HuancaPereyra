@@ -24,32 +24,16 @@ const ItemDetailContainer = () => {
         id: item.id,
         ...item.data()
       });
-<<<<<<< HEAD
-        });
-        setLoading(false)
-    }, [id]);
-=======
     });
     setLoading(false)
   }, [id]);
->>>>>>> Entrega-Proyecto-Final
 
   return <div>
 
-<<<<<<< HEAD
-      return <div>
-        <br/>
-        {loading ? <Spinner animation="border" variant="light" /> : <div>
-      <br /><ItemDetail {...dataItem} />
-    </div>
-    }
-      </div>
-=======
     {loading ? <Spinner animation="border" variant="light" /> : <div>
       <br /><ItemDetail {...dataItem} />
     </div>
     }
   </div>
->>>>>>> Entrega-Proyecto-Final
 };
 export default ItemDetailContainer;

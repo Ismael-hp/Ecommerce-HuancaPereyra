@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const ItemCart = () => {
-  return (
-    <div><h1>Holasd a todoss</h1></div>
-=======
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
@@ -35,7 +28,6 @@ const addCantidad=(cantidad)=>{
      </Card>
       </div>
 
->>>>>>> Entrega-Proyecto-Final
   )
 }
 
