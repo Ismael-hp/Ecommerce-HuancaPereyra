@@ -12,15 +12,12 @@ const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
-  console.log(id);
-
   const [dataItem, setDataItem] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true)
     const db = getFirestore();
-    console.log(id)
     const Items = doc(db, "items", id);
     getDoc(Items).then((item) => {
       setDataItem({
@@ -30,9 +27,6 @@ const ItemDetailContainer = () => {
     });
     setLoading(false)
   }, [id]);
-
-  console.log("Datos de DataItem:" + dataItem)
-  console.log(dataItem)
 
   return <div>
 

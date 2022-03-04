@@ -5,11 +5,6 @@ import ItemCount from '../Items_Comp/ItemCount';
 
 const ItemCart = ({ProductName,Precio,Imagen,quantity,id,Stock,getTotal}) => {
     const {removerItem,changeCart} = React.useContext(CartContext)
-
-    console.log("Esto tiene ItemCart")
-    console.log(Imagen);
-    console.log({quantity});
-
 const remmItem=()=>{
     removerItem(id)
 }

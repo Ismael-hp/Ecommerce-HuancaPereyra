@@ -3,11 +3,6 @@ import { CartContext } from "../../context/CartContext";
 import { Button, Card } from 'react-bootstrap';
 import {NavLink } from 'react-router-dom';
 import ItemCart from "./ItemCart";
-import CheckCompra from "../Check-Compra/CheckCompra";
-
-
-
-
 const Cart = () => {
   const { items,settotalPrice,totalPrice} = useContext(CartContext);
   useEffect(() => {
