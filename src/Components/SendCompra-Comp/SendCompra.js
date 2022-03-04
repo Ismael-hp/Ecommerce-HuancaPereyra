@@ -1,32 +1,42 @@
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
+import { useContext, useState } from "react";
+import { CartContext } from '../../context/CartContext';
+import { Link, NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const SendCompra = () => {
-    const [Comprador, setComprador] = useState({
-        name:"Test",
-        email:"Test2",
-        phone:"Test3"
-    });
-    const [ordenId, setordenId] = useState(null)
-    const SendOrder =()=>{
-        const order={
-            Comprador,
-            item:[{ProductName:"MB-rodado39",Precio:54545,Description:"Detalle del producto MB"}],
-            totalCompra:12983
-        };
-        const db = getFirestore();
-        const OrdenCompra= collection(db,"orders");
+const SendCompra = (FormData) => {
+  const { items, totalPrice, cleanCarrito } = useContext(CartContext)
+  const [ordenId, setordenId] = useState(null)
+  const SendOrder = () => {
+    if (FormData.FormData.nombreCompleto === "" || FormData.FormData.direccion === "" || FormData.FormData.email === "" || FormData.FormData.tel === "") {
 
-        addDoc(OrdenCompra,order).then(({id}) =>setordenId(id))
-        console.log(ordenId);
-    };
+      Swal.fire(
+        'Falta Datos',
+        'Debes Completar todos los campos para Realizar la compra',//JSON.stringify(DetalleCompra.items,null,4)
+        'error'
+      )
+    }
+    else {
+      const order = {
+        FormData,
+        items,
+        totalPrice
+      };
+      const db = getFirestore();
+      const OrdenCompra = collection(db, "orders");
 
+      addDoc(OrdenCompra, order).then(({ id }) => setordenId(id))
 
+    }
 
-
+  };
   return (
-    <div><Button onClick={SendOrder}>Realizar Compra!</Button></div>
+    <div className='m-5'>
+      {ordenId ? <div><p>Se completo la compra. Muchas gracias!<br />ticket de Compra:{ordenId}</p>
+        <NavLink to="/"><Button onClick={cleanCarrito}>SeguirComprando</Button></NavLink></div>
+        : <Button onClick={SendOrder}>Realizar Compra!</Button>}
+    </div>
   )
 }
 

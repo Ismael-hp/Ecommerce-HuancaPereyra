@@ -16,6 +16,7 @@ const Routess = () => {
           <Route path="/" element={<ItemlistContainer />} />
           <Route path="/category/:id" element={<ItemlistContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer/>} />
+          <Route path='/category/:id/item/:id' element={<ItemDetailContainer/>} />
           <Route path="/item/:id/carrito" element={<h1>Lista de productos en el Carrito</h1>} />
           <Route path='/cartList' element={<Cart/>}/>
           <Route path='/checkout' element={<FormmC/>}/>

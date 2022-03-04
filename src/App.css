@@ -29,6 +29,27 @@
   justify-content:space-around;
 }
 
+
+.FlexStyleDetail{
+  width: 90%;
+  margin: auto;
+  display:flex;
+flex-direction: row;
+  justify-content:space-around;
+}
+.vistaCheckout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.formulario{
+  width:50%;
+  margin:0%;
+}
+
 .DetailC{
   display: none;
 }
